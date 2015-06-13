@@ -93,11 +93,12 @@ public class RecyclerListViewActivity extends Activity  {
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-//                        Toast.makeText(RecyclerListViewActivity.this,"onClick--> positio" + getPosition(),Toast.LENGTH_SHORT).show();
-//                        mList.remove(mList.get(getPosition()));
-//                        notifyItemRemoved(getPosition());
+                        Toast.makeText(RecyclerListViewActivity.this,"onClick--> positio" + getPosition(),Toast.LENGTH_SHORT).show();
+                        mList.remove(mList.get(getPosition()));
+                        //系统提供的删除动画
+                        notifyItemRemoved(getPosition());
 
-                        v.setScrollX(100);
+//                        v.setScrollX(100);
 
                     }
                 });
