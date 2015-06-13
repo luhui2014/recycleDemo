@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#f00</color>
+
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_black">#000000</color>
+    <color name="color_share_title_text">#FFA2A2A2</color>
+    <color name="dialog_title_background">#17170443</color>
+    <color name="main_username">#ffd6d6d6</color>
+    <color name="radiobg_press">#ff43859d</color>
+    <color name="radiobg_normal">#ff555555</color>
+    <color name="white">#ffffffff</color>
+    <color name="snow">#fffffafa</color>
+    <color name="silver">#ffc0c0c0</color>
+    <color name="blue">#B0E0E6</color>
+    <color name="skyblue">#ff87ceeb</color>
+    <color name="darkgrey">#ffa9a9a9</color>
+    <color name="common_font_color_2">#ff485361</color>
+    <color name="itemcolcor">#fff1f6fc</color>
+    <color name="bg">#fff1f6fc</color>
+    <color name="black">#ff000000</color>
+    <color name="titleBackground">#ffd90504</color>
+    <color name="titleBackground1">#ff6da700</color>
+    <color name="orange">#ffff9000</color>
+    <color name="titleBackground_half">#ffd90504</color>
+    <color name="colorstart">#ff6da700</color>
+    <color name="colormiddle">#ff7fffff</color>
+    <color name="colorend">#ff9258ff</color>
+    <color name="green">#ff43b44f</color>
+    <color name="grey">#ff808080</color>
+    <color name="transparent">#00000000</color>
+    <color name="gold">#b89766</color>
+    <color name="baseColor">#fff</color>
+    <color name="note_list_row">#000</color>
+    <color name="todo_list_row">#000</color>
+    <color name="header">#000</color>
+    <color name="note_row_date_text">#fff</color>
+    <color name="note_row_content_text">#fff</color>
+    <color name="todo_row_text">#000</color>
+    <color name="headerText">#eee</color>
+    <color name="red">#FFC0CB</color>
+    <color name="row_edit_background">#0f96ff</color>
+    <color name="textbox_rounded_border_bl">#ff666666</color>
+    <color name="textbox_rounded_background_bl">#fff</color>
+
+    <color name="list_selected">#ffededed</color>
+    <color name="login_background">#ff6eae43</color>
+    <color name="hint_footer_bg">#fff8f6f1</color>
+
+    <color name="pop_text_color">#ff5e5448</color>
+    <color name="hint">#ccc</color>
+
+    <!-- 公用颜色 -->
+    <color name="common_text">#ff212121</color>
+    <color name="common_text_disable">#ff999999</color>
+    <color name="common_sub_text">#ff454545</color>
+    <color name="common_link_text">#ff1981eb</color>
+    <color name="common_select">#ff1981eb</color>
+    <color name="common_unselect">#ffaaaaaa</color>
+    <color name="common_press">#ff1981eb</color>
+    <color name="common_border_press">#ff0472d0</color>
+    <color name="common_dark_press">#ff2869a9</color>
+    <color name="common_contrast">#ffffffff</color>		<!-- 按下等情况下反色效果 -->
+    <color name="common_shadow">#33000000</color>
+    <color name="common_bg">#fff6f6f6</color>
+
+    <!-- 菜单 -->
+    <color name="menu_item_press">#ff2869a9</color>
+    <color name="menu_item_text">#ffb0b0b0</color>
+    <color name="menu_item_text_disable">#ff666666</color>
+
+    <color name="menu_indicator_select">#ff22afff</color>
+    <color name="menu_indicator_press">#3331a9f4</color>
+    <color name="menu_indicator_unselect">#33647276</color>
+    <color name="menu_indicator_decor_line">#33647276</color>
+
+    <color name="menu_tab">#00000000</color>
+    <color name="menu_tab_press">#3331a9f4</color>
+    <color name="menu_tab_text">#ffd9e2ec</color>
+    <color name="menu_tab_text_press">#ffffffff</color>
+    <color name="menu_tab_text_select">#ff22afff</color>
+
+    <color name="menu_indicator_select_night">#ff5582a9</color>
+    <color name="menu_tab_text_select_night">#ff5582a9</color>
+
+    <!-- Indicator -->
+    <color name="indicator_select">#ff1981eb</color>
+    <color name="indicator_unselect">#20000000</color>
+    <color name="indicator_highlight">#ff57efff</color>
+    <color name="indicator_shine">#c057efff</color>
+
+    <color name="indicator_select_night">#ff5582a9</color>
+
+    <!-- new version color -->
+    <color name="common_read_text_color">#666666</color>
+    <color name="common_read_alltext_color">#a0a0a0</color>
+    <color name="group_gridview_bg">#efefef</color>
+    <color name="notebook_name_bg">#767676</color>
+    <color name="notebook_name_default">#c2c2c2</color>
+
+    <drawable name="todo_item_click_red">#f00</drawable>
+    <drawable name="todo_item_click_black">#000</drawable>
+
+    <color name="rippleColor">#668B8B</color>
+
+    <color name="pop_bg"> #8b8b8b</color>
+</resources>

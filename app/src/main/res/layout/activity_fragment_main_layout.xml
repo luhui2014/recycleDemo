@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/fragment_main_top"
+        layout="@layout/comment_head_layout"/>
+
+    <include
+        android:id="@+id/fragment_main_bottomBar"
+        layout="@layout/comment_bottom_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+    <TextView
+        android:id="@+id/fragment_main_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/fragment_main_bottomBar"
+        android:background="#dadada"/>
+
+    <FrameLayout
+        android:id="@+id/id_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/fragment_main_bottomBar"
+        android:layout_below="@id/fragment_main_top"/>
+
+</RelativeLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/objectAnimator_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/comment_click_bg"
+        android:padding="10dp"
+        android:text="objectAnimator"
+        android:textColor="#444"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/valueAnimator_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/comment_click_bg"
+        android:padding="10dp"
+        android:text="ValueAnimator实现动画"
+        android:textColor="#444"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/parabola_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/comment_click_bg"
+        android:padding="10dp"
+        android:text="抛物线的效果"
+        android:textColor="#444"
+        android:textSize="18dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/AnimationSet_together_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/comment_click_bg"
+            android:padding="10dp"
+            android:text="AnimationSet 实现动画  together"
+            android:textColor="#444"
+            android:layout_weight="1"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/AnimationSet_control_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/comment_click_bg"
+            android:padding="10dp"
+            android:text="AnimationSet 实现动画  控制执行顺序"
+            android:textColor="#444"
+            android:layout_weight="1"
+            android:textSize="18dp"/>
+
+    </LinearLayout>
+
+
+
+    <ImageView
+        android:id="@+id/animation_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/violet_coupon"/>
+
+</LinearLayout>
