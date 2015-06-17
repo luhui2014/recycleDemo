@@ -85,4 +85,14 @@
         android:padding="10dp"
         android:layout_marginTop="10dp"
         android:text="RecyclerView 混合布局"/>
+
+    <TextView
+        android:id="@+id/home_scrollView_sticky"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#444"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:text="scrollView 的浮动的标签"/>
 </LinearLayout>

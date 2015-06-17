@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.cnpaypal.ObservableScrollView.ObservableScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll_sticky"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View style="@style/Item.Top"/>
+
+            <View
+                android:id="@+id/placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"></View>
+
+            <View style="@style/Item.Bottom" />
+            <View style="@style/Item.Bottom.Alt" />
+            <View style="@style/Item.Bottom" />
+            <View style="@style/Item.Bottom.Alt" />
+            <View style="@style/Item.Bottom" />
+            <View style="@style/Item.Bottom.Alt" />
+
+        </LinearLayout>
+
+        <TextView android:id="@+id/sticky" style="@style/Item.Sticky" />
+    </FrameLayout>
+
+</com.cnpaypal.ObservableScrollView.ObservableScrollView>

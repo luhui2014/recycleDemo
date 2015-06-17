@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.cnpaypal.CrashCatchUtil.CrashHandler;
+import com.cnpaypal.ObservableScrollView.ScrollStickyActivity;
 import com.cnpaypal.animation.AnimationMainActivity;
 import com.cnpaypal.animation.LayoutChange;
 import com.cnpaypal.animation.ObjectAnimatorActivity;
@@ -26,6 +28,9 @@ public class MainActivity extends Activity{
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main_layout);
+
+        CrashHandler crashHandler = CrashHandler.getInstance();
+        crashHandler.init(getApplicationContext());
 
         initView();
     }
@@ -93,6 +98,13 @@ public class MainActivity extends Activity{
             @Override
             public void onClick(View v) {
                 CommentUtil.startActivityTranslate(MainActivity.this, RecycleMultipleItemActivity.class);
+            }
+        });
+
+        findViewById(R.id.home_scrollView_sticky).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CommentUtil.startActivityTranslate(MainActivity.this, ScrollStickyActivity.class);
             }
         });
 
