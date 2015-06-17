@@ -1,6 +1,9 @@
 # recycleDemo
  fragment，listview 优化下载，通用适配器，recycleView的demo,叶子加载动画等等
- 
+
+2015-6-17 增加 手机异常出错后，将错误日志保存到本地，若需要上传到服务器，也可进行上传的处理。
+
+2015-6-12
 1.Fragement的例子的展示
 ![](http://a2.qpic.cn/psb?/V13Kv6ef3CGcA0/yhiVThmpUXv2.R.8*zrAbETcmlDy*MhjGQD8ODLe*gM!/b/dCUAAAAAAAAA&bo=6gSyAwAAAAACYRo!&rf=viewer_4)
 
