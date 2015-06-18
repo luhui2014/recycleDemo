@@ -10,6 +10,7 @@
 
 ####（2）增加 blurEffect 的例子以及已过期的展示
  ![](http://a2.qpic.cn/psb?/V13Kv6ef3CGcA0/66LsNhNYXMtFf0rSJcQnakuR.iUrbBNAj*YyxzVGGLs!/b/dCIAAAAAAAAA&bo=6QC8AQAAAAAC*48!&rf=viewer_4)
+ ![](http://a2.qpic.cn/psb?/V13Kv6ef3CGcA0/tVV9dPtXO4MiUrvVlbaTpuyhUsucFSDz8GKS8vkth18!/b/dBYAAAAAAAAA&bo=MgJPAQAAAAADB1w!&rf=viewer_4&t=5)
 
  [github上的链接](https://github.com/PomepuyN/BlurEffectForAndroidDesign)
 
