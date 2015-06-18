@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.cnpaypal.home.R;
 
 /**
- * scrollview ÀïÃæµÄ¸¡¶¯µÄ±êÇ©µÄ½çÃæ
+ * scrollview é‡Œé¢çš„æµ®åŠ¨çš„æ ‡ç­¾çš„ç•Œé¢
  */
 public class ScrollStickyActivity extends Activity implements ObservableScrollView.ScrollCallBack{
     private TextView txtContent;
@@ -17,20 +17,20 @@ public class ScrollStickyActivity extends Activity implements ObservableScrollVi
     private ObservableScrollView observableScrollView;
 
     /**
-     * ÉÏ»¬¶¯×´Ì¬
+     * ä¸Šæ»‘åŠ¨çŠ¶æ€
      */
     private static final int STATE_ONSCREEN = 0;
     /**
-     * ÉÏ»¬¶¯ÖÁÍêÈ«ÕÚ¸Ç×¡mPlaceholderView
+     * ä¸Šæ»‘åŠ¨è‡³å®Œå…¨é®ç›–ä½mPlaceholderView
      */
     private static final int STATE_OFFSCREEN = 1;
     /**
-     * ÍêÈ«ÕÚ¸Ç×¡Ê±£¬ÏÂ»¬×´Ì¬
+     * å®Œå…¨é®ç›–ä½æ—¶ï¼Œä¸‹æ»‘çŠ¶æ€
      */
     private static final int STATE_RETURING = 2;
     private int mState = STATE_ONSCREEN;
     /**
-     * ¸ß¶È
+     * é«˜åº¦
      */
     private int mViewHeight;
     private int minRaw;
@@ -44,18 +44,18 @@ public class ScrollStickyActivity extends Activity implements ObservableScrollVi
     }
 
     private void initView(){
-        //¶¨Î» sticky Î»ÖÃµÄÒ»¸ö±ê¼ÇµÄview,»á±»×îÖÕµÄsticky¸²¸Ç
+        //å®šä½ sticky ä½ç½®çš„ä¸€ä¸ªæ ‡è®°çš„view,ä¼šè¢«æœ€ç»ˆçš„stickyè¦†ç›–
         mPlaceholderView = findViewById(R.id.placeholder);
 
-        //ÕæÕıµÄ¸¡¶¯µÄview ,Ëû»á²»¶ÏÖ´ĞĞÎ»ÒÆ¶¯»­
+        //çœŸæ­£çš„æµ®åŠ¨çš„view ,ä»–ä¼šä¸æ–­æ‰§è¡Œä½ç§»åŠ¨ç”»
         txtContent = (TextView)findViewById(R.id.sticky);
         txtContent.setText("ScrollView sticky");
 
-        //ÕÒµ½¶ÔÓ¦µÄ²¼¾Ö£¬²¢ÉèÖÃ¼àÌıµÄÊÂ¼ş£¬½øĞĞ»Øµ÷µÄ´¦Àí
+        //æ‰¾åˆ°å¯¹åº”çš„å¸ƒå±€ï¼Œå¹¶è®¾ç½®ç›‘å¬çš„äº‹ä»¶ï¼Œè¿›è¡Œå›è°ƒçš„å¤„ç†
         observableScrollView = (ObservableScrollView)findViewById(R.id.scroll_sticky);
         observableScrollView.setCallBack(this);
 
-        //µ±²¼¾Ö»æÖÆÍêÈ«µÄÊ±ºòÎÒÃÇ²Å¿ÉÒÔµÃµ½view.getTop(),À´³õÊ¼»¯ ¸¡¶¯²ãµÄ¾ßÌåµÄÎ»ÖÃ
+        //å½“å¸ƒå±€ç»˜åˆ¶å®Œå…¨çš„æ—¶å€™æˆ‘ä»¬æ‰å¯ä»¥å¾—åˆ°view.getTop(),æ¥åˆå§‹åŒ– æµ®åŠ¨å±‚çš„å…·ä½“çš„ä½ç½®
         observableScrollView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -69,13 +69,13 @@ public class ScrollStickyActivity extends Activity implements ObservableScrollVi
     @Override
     public void onScrollChanged(int verticalDistances) {
         int translation = Math.max(verticalDistances , mPlaceholderView.getTop());
-        //º¯ÊıËµÃ÷  translation in y of the view.
+        //å‡½æ•°è¯´æ˜  translation in y of the view.
         txtContent.setTranslationY(translation);
 
-//        //ÕâÊÇÒ»¸öÏà¶ÔµÄ¾àÀë£¬ÆäÊµÊÇscrollviewµÄ¶¥²¿¾àÀë ¸¡¶¯°´Å¥µÄ¾àÀë£¬
+//        //è¿™æ˜¯ä¸€ä¸ªç›¸å¯¹çš„è·ç¦»ï¼Œå…¶å®æ˜¯scrollviewçš„é¡¶éƒ¨è·ç¦» æµ®åŠ¨æŒ‰é’®çš„è·ç¦»ï¼Œ
 //        int relativeDistances = mPlaceholderView.getTop()-verticalDistances;
 //
-//        //¸¡¶¯²ã´¹Ö±¹ö¶¯µÄ¾àÀë
+//        //æµ®åŠ¨å±‚å‚ç›´æ»šåŠ¨çš„è·ç¦»
 //        int translationY = 0;
 //
 //        switch (mState){

@@ -38,6 +38,10 @@ public class FragmentMainActivity extends Activity implements View.OnClickListen
      * 初始化布局
      */
     private void initView() {
+        setClickListener();
+    }
+
+    private void setClickListener() {
         LinearLayout homeBottomLayout = (LinearLayout) findViewById(R.id.fragment_main_bottomBar);
         LinearLayout homeBtn = (LinearLayout) homeBottomLayout.findViewById(R.id.fragment_home_btn);
         LinearLayout nearByBtn = (LinearLayout) homeBottomLayout.findViewById(R.id.fragment_nearby_btn);
@@ -48,8 +52,6 @@ public class FragmentMainActivity extends Activity implements View.OnClickListen
         nearByBtn.setOnClickListener(this);
         attentionBtn.setOnClickListener(this);
         userBtn.setOnClickListener(this);
-
-
     }
 
     private void setDefaultFragment(Bundle savedInstanceState) {

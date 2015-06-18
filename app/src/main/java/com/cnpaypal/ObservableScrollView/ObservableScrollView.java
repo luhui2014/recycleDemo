@@ -5,17 +5,17 @@ import android.util.AttributeSet;
 import android.widget.ScrollView;
 
 /**
- * ×Ô¶¨Òå¹ö¶¯Àà£¬¸¡¶¯±êÇ©
+ * è‡ªå®šä¹‰æ»šåŠ¨ç±»ï¼Œæµ®åŠ¨æ ‡ç­¾
  */
 public class ObservableScrollView extends ScrollView{
     private ScrollCallBack mCallBack;
 
-    //×¢²á»Øµ÷ÊÂ¼ş
+    //æ³¨å†Œå›è°ƒäº‹ä»¶
     public interface ScrollCallBack{
         void onScrollChanged(int verticalDistances);
     }
 
-    //¹¹Ôìº¯Êı
+    //æ„é€ å‡½æ•°
     public ObservableScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
@@ -26,11 +26,11 @@ public class ObservableScrollView extends ScrollView{
 
 
     /**
-     * ÒÔÆÁÄ»×óÉÏ½ÇÎª×ø±êÔ­µã £¨0,0£©
-     * l	Current horizontal scroll origin. µ±Ç°Ë®Æ½¹ö¶¯µ½µÄµã
-     * t	Current vertical scroll origin.      µ±Ç°´¹Ö±¹ö¶¯µ½µÄµã
-     * oldl	Previous horizontal scroll origin. ¹ö¶¯Ç°Ë®Æ½µÄµã
-     * oldt	Previous vertical scroll origin.     ¹ö¶¯Ç°´¹Ö±µÄµã
+     * ä»¥å±å¹•å·¦ä¸Šè§’ä¸ºåæ ‡åŸç‚¹ ï¼ˆ0,0ï¼‰
+     * l	Current horizontal scroll origin. å½“å‰æ°´å¹³æ»šåŠ¨åˆ°çš„ç‚¹
+     * t	Current vertical scroll origin.      å½“å‰å‚ç›´æ»šåŠ¨åˆ°çš„ç‚¹
+     * oldl	Previous horizontal scroll origin. æ»šåŠ¨å‰æ°´å¹³çš„ç‚¹
+     * oldt	Previous vertical scroll origin.     æ»šåŠ¨å‰å‚ç›´çš„ç‚¹
      */
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
@@ -42,7 +42,7 @@ public class ObservableScrollView extends ScrollView{
 
 
     /**
-     * ÓÉ´¹Ö±·½Ïò¹ö¶¯Ìõ´ú±íµÄËùÓĞ´¹Ö±·¶Î§£¬È±Ê¡µÄ·¶Î§ÊÇµ±Ç°ÊÓÍ¼µÄ»­Í¼¸ß¶È¡£
+     * ç”±å‚ç›´æ–¹å‘æ»šåŠ¨æ¡ä»£è¡¨çš„æ‰€æœ‰å‚ç›´èŒƒå›´ï¼Œç¼ºçœçš„èŒƒå›´æ˜¯å½“å‰è§†å›¾çš„ç”»å›¾é«˜åº¦ã€‚
      */
     public int computeVerticalScrollRange(){
         return super.computeVerticalScrollRange();

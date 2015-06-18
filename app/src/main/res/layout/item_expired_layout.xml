@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/no_expired_text"
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="100dp"
+        android:text="未过期的展示"
+        android:textColor="#444"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@drawable/hotsearch_item_border"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/no_expired_text"
+        android:background="@drawable/hotsearch_item_border">
+
+        <TextView
+            android:id="@+id/has_expired_text"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="过期的展示,过期的展示过期的展示过期的展示过期的展示过期的展示过期的展示"
+            android:textColor="#444"
+            android:textSize="20sp"/>
+
+        <LinearLayout
+            android:id="@+id/has_expired_text_cover"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#f2f2f2"
+            android:alpha="0.9"
+            android:layout_margin="0.5dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_lable_preferntial_soldout"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

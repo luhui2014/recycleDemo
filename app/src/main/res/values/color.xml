@@ -112,4 +112,9 @@
     <color name="top_item">#a6c</color>
     <color name="bottom_item">#f44</color>
     <color name="bottom_item_alt">#c00</color>
+
+    <color name="primary">#009688</color>
+    <color name="primaryDark">#00796b</color>
+    <color name="accent">#eeff41</color>
+    <color name="accentLight">#F4FF81</color>
 </resources>

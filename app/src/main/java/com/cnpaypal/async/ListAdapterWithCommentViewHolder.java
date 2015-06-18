@@ -22,7 +22,7 @@ public class ListAdapterWithCommentViewHolder extends CommentAdapter<MerchantBea
     public static String[] URLS;
 
     public ListAdapterWithCommentViewHolder(Context context,List<MerchantBean> merchantBeanList,ListView listView) {
-        super(context,merchantBeanList, R.layout.list_item);
+        super(context,merchantBeanList, R.layout.list_blur_item);
 
         mMerchantBeanList = merchantBeanList;
 

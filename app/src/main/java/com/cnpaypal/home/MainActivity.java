@@ -6,8 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.cnpaypal.BlurEffect.BlurEffectMainActivity;
 import com.cnpaypal.CrashCatchUtil.CrashHandler;
+import com.cnpaypal.ObservableScrollView.ObservableScrollViewActivity;
+import com.cnpaypal.ObservableScrollView.ParallaxToolbarScrollViewActivity;
 import com.cnpaypal.ObservableScrollView.ScrollStickyActivity;
+import com.cnpaypal.activity.CustomExpiredActivity;
 import com.cnpaypal.animation.AnimationMainActivity;
 import com.cnpaypal.animation.LayoutChange;
 import com.cnpaypal.animation.ObjectAnimatorActivity;
@@ -105,6 +109,34 @@ public class MainActivity extends Activity{
             @Override
             public void onClick(View v) {
                 CommentUtil.startActivityTranslate(MainActivity.this, ScrollStickyActivity.class);
+            }
+        });
+
+        findViewById(R.id.home_scrollView_FlexibleSpaceWithImage).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CommentUtil.startActivityTranslate(MainActivity.this, ObservableScrollViewActivity.class);
+            }
+        });
+
+        findViewById(R.id.ParallaxToolbarScrollViewActivity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CommentUtil.startActivityTranslate(MainActivity.this, ParallaxToolbarScrollViewActivity.class);
+            }
+        });
+
+        findViewById(R.id.BlurEffect_Activity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CommentUtil.startActivityTranslate(MainActivity.this, BlurEffectMainActivity.class);
+            }
+        });
+
+        findViewById(R.id.expired_Activity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CommentUtil.startActivityTranslate(MainActivity.this, CustomExpiredActivity.class);
             }
         });
 

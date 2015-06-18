@@ -74,7 +74,19 @@
 
         <activity android:name="com.cnpaypal.ObservableScrollView.ScrollStickyActivity"
                   android:label="@string/app_name"
-                  android:screenOrientation="portrait"></activity>
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name="com.cnpaypal.ObservableScrollView.ObservableScrollViewActivity"
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name="com.cnpaypal.ObservableScrollView.ParallaxToolbarScrollViewActivity"
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name="com.cnpaypal.BlurEffect.BlurEffectMainActivity"></activity>
+
+        <activity android:name="com.cnpaypal.activity.CustomExpiredActivity"></activity>
     </application>
 
 </manifest>

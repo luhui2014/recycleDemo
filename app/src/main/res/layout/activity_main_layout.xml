@@ -1,98 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/home_list_btn"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#444"
-        android:textSize="18sp"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"
-        android:text="listView的异步加载和通用适配器的演示"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="15dp">
 
-    <TextView
-        android:id="@+id/home_fragment_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#444"
-        android:textSize="18sp"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"
-        android:text="Fragment的演示"/>
+        <TextView
+            android:id="@+id/home_list_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="listView的异步加载和通用适配器的演示"
+            android:textColor="#444"
+            android:textSize="18sp"/>
 
-
-    <TextView
-        android:id="@+id/home_fragment_loading"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#444"
-        android:textSize="18sp"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"
-        android:text="叶子加载动画的展示"/>
-
-    <TextView
-        android:id="@+id/home_layout_change"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#444"
-        android:textSize="18sp"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"
-        android:text="Animating Layout Changes"/>
-
-    <TextView
-        android:id="@+id/home_animation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#444"
-        android:textSize="18sp"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"
-        android:text="android 属性动画学习研究"/>
-
-    <TextView
-        android:id="@+id/home_recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#444"
-        android:textSize="18sp"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"
-        android:text="RecyclerView listView的学习使用"/>
+        <TextView
+            android:id="@+id/home_fragment_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="Fragment的演示"
+            android:textColor="#444"
+            android:textSize="18sp"/>
 
 
-    <TextView
-        android:id="@+id/home_recyclerView_gridView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#444"
-        android:textSize="18sp"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"
-        android:text="RecyclerView GridView的学习使用"/>
+        <TextView
+            android:id="@+id/home_fragment_loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="叶子加载动画的展示"
+            android:textColor="#444"
+            android:textSize="18sp"/>
 
-    <TextView
-        android:id="@+id/home_recyclerView_multiple"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#444"
-        android:textSize="18sp"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"
-        android:text="RecyclerView 混合布局"/>
+        <TextView
+            android:id="@+id/home_layout_change"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="Animating Layout Changes"
+            android:textColor="#444"
+            android:textSize="18sp"/>
 
-    <TextView
-        android:id="@+id/home_scrollView_sticky"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#444"
-        android:textSize="18sp"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"
-        android:text="scrollView 的浮动的标签"/>
-</LinearLayout>
+        <TextView
+            android:id="@+id/home_animation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="android 属性动画学习研究"
+            android:textColor="#444"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/home_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="RecyclerView listView的学习使用"
+            android:textColor="#444"
+            android:textSize="18sp"/>
+
+
+        <TextView
+            android:id="@+id/home_recyclerView_gridView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="RecyclerView GridView的学习使用"
+            android:textColor="#444"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/home_recyclerView_multiple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="RecyclerView 混合布局"
+            android:textColor="#444"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/home_scrollView_sticky"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="scrollView 的浮动的标签"
+            android:textColor="#444"
+            android:textSize="18sp"/>
+
+        <!--FlexibleSpaceWithImageScrollViewActivity-->
+        <TextView
+            android:id="@+id/home_scrollView_FlexibleSpaceWithImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="ScrollView 下拉带图片拉伸,title图片出现的时候隐藏"
+            android:textColor="#444"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/ParallaxToolbarScrollViewActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="ScrollView 下拉带图片拉伸,title图片出现的时候隐藏22222222"
+            android:textColor="#444"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/BlurEffect_Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="BlurEffect 效果展示"
+            android:textColor="#444"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/expired_Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="已过期，已售罄 效果展示"
+            android:textColor="#444"
+            android:textSize="18sp"/>
+
+
+    </LinearLayout>
+</ScrollView>

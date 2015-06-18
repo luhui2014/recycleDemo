@@ -56,7 +56,7 @@ public class ListAdapter extends BaseAdapter implements AbsListView.OnScrollList
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if(convertView == null){
-            convertView = mInflater.inflate(R.layout.list_item,parent,false);
+            convertView = mInflater.inflate(R.layout.list_blur_item,parent,false);
             viewHolder = new ViewHolder();
             viewHolder.image = (ImageView)convertView.findViewById(R.id.merchant_image);
             viewHolder.title = (TextView)convertView.findViewById(R.id.merchant_title);
