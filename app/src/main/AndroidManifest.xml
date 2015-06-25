@@ -84,9 +84,17 @@
                   android:label="@string/app_name"
                   android:screenOrientation="portrait"/>
 
-        <activity android:name="com.cnpaypal.BlurEffect.BlurEffectMainActivity"></activity>
+        <activity android:name="com.cnpaypal.BlurEffect.BlurEffectMainActivity"/>
 
-        <activity android:name="com.cnpaypal.activity.CustomExpiredActivity"></activity>
+        <activity android:name="com.cnpaypal.activity.CustomExpiredActivity"/>
+
+        <activity android:name="com.cnpaypal.activity.VelocimeterActivity"/>
+
+        <activity android:name="com.cnpaypal.StickyNavLayout.StickyNavLayoutActivity"
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait"/>
+
+
     </application>
 
 </manifest>

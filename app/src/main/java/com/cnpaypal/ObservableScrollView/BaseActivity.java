@@ -18,7 +18,7 @@ package com.cnpaypal.ObservableScrollView;
 
 import android.app.Activity;
 import android.content.res.TypedArray;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.AbsListView;
@@ -30,7 +30,7 @@ import com.cnpaypal.home.R;
 
 import java.util.ArrayList;
 
-public abstract class BaseActivity extends Activity {
+public abstract class BaseActivity extends FragmentActivity {
     private static final int NUM_OF_ITEMS = 100;
     private static final int NUM_OF_ITEMS_FEW = 3;
 

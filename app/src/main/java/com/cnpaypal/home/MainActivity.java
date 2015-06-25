@@ -11,7 +11,10 @@ import com.cnpaypal.CrashCatchUtil.CrashHandler;
 import com.cnpaypal.ObservableScrollView.ObservableScrollViewActivity;
 import com.cnpaypal.ObservableScrollView.ParallaxToolbarScrollViewActivity;
 import com.cnpaypal.ObservableScrollView.ScrollStickyActivity;
+import com.cnpaypal.ObservableScrollView.ViewPagerTabScrollViewActivity;
+import com.cnpaypal.StickyNavLayout.StickyNavLayoutActivity;
 import com.cnpaypal.activity.CustomExpiredActivity;
+import com.cnpaypal.activity.VelocimeterActivity;
 import com.cnpaypal.animation.AnimationMainActivity;
 import com.cnpaypal.animation.LayoutChange;
 import com.cnpaypal.animation.ObjectAnimatorActivity;
@@ -137,6 +140,21 @@ public class MainActivity extends Activity{
             @Override
             public void onClick(View v) {
                 CommentUtil.startActivityTranslate(MainActivity.this, CustomExpiredActivity.class);
+            }
+        });
+
+        findViewById(R.id.velocimeter_activity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CommentUtil.startActivityTranslate(MainActivity.this, VelocimeterActivity.class);
+            }
+        });
+
+
+        findViewById(R.id.obScrollview_viewpager_activity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CommentUtil.startActivityTranslate(MainActivity.this, StickyNavLayoutActivity.class);
             }
         });
 
