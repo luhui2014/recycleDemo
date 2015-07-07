@@ -2,7 +2,7 @@
  fragment，listView 优化下载，通用适配器，recycleView的demo,叶子加载动画等等
 
 ###2015-6-25
-##### 增加 自定义的layout里面包含viewpager,下滑时头部会出现，上拉头部隐藏，不予内部时间传递冲突
+  增加 自定义的layout里面包含viewpager,下滑时头部会出现，上拉头部隐藏，不予内部时间传递冲突
  [学习与鸿洋的博客 http://blog.csdn.net/lmj623565791/article/details/43649913](http://blog.csdn.net/lmj623565791/article/details/43649913)
 
 ###2015-6-18

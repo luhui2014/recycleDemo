@@ -11,6 +11,8 @@ import android.widget.LinearLayout;
 
 import com.cnpaypal.home.R;
 
+import java.util.HashMap;
+
 /**
  * 1.直接每次点击都是刷新当前页面，重新获取布局 http://blog.csdn.net/lmj623565791/article/details/37970961
  * 2.动态添加fragment的布局（以下是实现方法）

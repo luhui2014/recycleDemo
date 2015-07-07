@@ -7,9 +7,13 @@ import com.cnpaypal.home.R;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Administrator on 2015/6/18.
@@ -24,10 +28,21 @@ public class CustomExpiredActivity extends Activity{
         setContentView(R.layout.item_expired_layout);
 
 //        sortByComparable();
-        sortByComparator();
+//        sortByComparator();
+
+        Collection<?>[] collections = {
+                new HashSet<String>(),
+                new ArrayList<String>(),
+                new HashMap<String,String>().keySet()
+        };
+
+        for(Collection<?> collection :collections){
+            Log.d("AAAA","打印结果="+classify(collection));
+        }
+
+//        Integer
 
     }
-
 
     private void sortByComparable(){
         //Comparator 和 Comparable 的用法的比较
@@ -87,7 +102,6 @@ public class CustomExpiredActivity extends Activity{
 //    private enum expired{
 //        INSTANCE;
 //    }
-
 
     //首先是comparable 类在设计的时候考虑到了需要排序，例如先age排序后名称排序。自然顺序
     public class Person implements Comparable<Person>{
@@ -156,5 +170,21 @@ public class CustomExpiredActivity extends Activity{
             return "person22 sort age="+this.mAge+" ,name="+this.mName;
         }
 
+    }
+
+
+    public static String classify(Set<?> s){
+        return "set";
+    }
+
+    public static String classify(List<?> list){
+        return "list";
+    }
+
+    public static String classify(Collection<?> c){
+//        return "unKnown Collection";
+        return c instanceof Set ? "set"
+                : c instanceof List ? "list"
+                : "UnKnow Collection";
     }
 }

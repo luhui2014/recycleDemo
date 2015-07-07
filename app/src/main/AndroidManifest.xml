@@ -94,7 +94,11 @@
                   android:label="@string/app_name"
                   android:screenOrientation="portrait"/>
 
+        <activity android:name="cirmellntent.activity.CrimeActivity"/>
 
+        <activity android:name="cirmellntent.activity.CrimeListActivity"/>
+
+        <activity android:name="cirmellntent.activity.CrimePagerActivity"/>
     </application>
 
 </manifest>

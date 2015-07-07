@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/crime_list_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试数据"
+        android:textSize="16sp"
+        android:padding="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/crime_list_title"
+        android:id="@+id/crime_list_date"
+        android:padding="5dp"
+        android:textSize="16sp"
+        android:text="测试数据日期"/>
+
+    <CheckBox
+        android:id="@+id/crime_list_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentRight="true"
+        android:focusable="false"
+        android:gravity="center"
+        android:layout_marginRight="18dp"
+        android:padding="4dp"/>
+
+
+
+</RelativeLayout>

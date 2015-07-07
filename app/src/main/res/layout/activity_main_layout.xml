@@ -163,5 +163,15 @@
             android:textColor="#444"
             android:textSize="18sp"/>
 
+        <TextView
+            android:id="@+id/Android_study_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="android 权威编程指南"
+            android:textColor="#444"
+            android:textSize="18sp"/>
+
     </LinearLayout>
 </ScrollView>

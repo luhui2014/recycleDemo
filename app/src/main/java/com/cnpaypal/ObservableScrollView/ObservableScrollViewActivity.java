@@ -14,6 +14,7 @@ import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
 import com.nineoldandroids.view.ViewHelper;
 import com.nineoldandroids.view.ViewPropertyAnimator;
 
+
 /**
  * Created by Administrator on 2015/6/16.
  */
@@ -57,6 +58,7 @@ public class ObservableScrollViewActivity extends BaseActivity implements Observ
             }
         });
         mFabMargin = getResources().getDimensionPixelSize(R.dimen.margin_standard);
+
         ViewHelper.setScaleX(mFab, 0);
         ViewHelper.setScaleY(mFab, 0);
 
