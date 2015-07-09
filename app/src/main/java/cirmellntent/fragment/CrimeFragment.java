@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -156,4 +157,13 @@ public class CrimeFragment extends Fragment{
         fragment.show(getActivity().getSupportFragmentManager(), null);
     }
 
+    /**
+     * 系统回收内存的时候，会调用onPause的方法
+     */
+    @Override
+    public void onPause() {
+        Log.d("AAAA", "CrimeFragment 调用 onPause");
+        super.onPause();
+        CrimeLab.getCrimeLab(getActivity()).saveCrimes();
+    }
 }
