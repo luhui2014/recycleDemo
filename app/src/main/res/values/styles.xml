@@ -82,4 +82,6 @@
         <item name="dp_textHeaderColor">#90FFFFFF</item>
     </style>
 
+    <style name="CircularProgressDrawableStyle" parent="Material.Drawable.CircularProgress"/>
+
 </resources>

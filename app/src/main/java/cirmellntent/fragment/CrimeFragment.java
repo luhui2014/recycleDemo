@@ -1,5 +1,11 @@
 package cirmellntent.fragment;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.drawable.BitmapDrawable;
+import android.hardware.Camera;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,6 +19,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.cnpaypal.home.R;
@@ -24,16 +32,23 @@ import com.rey.material.app.TimePickerDialog;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.UUID;
+
+import cirmellntent.activity.CrimeCameraActivity;
 import cirmellntent.model.Crime;
 import cirmellntent.model.CrimeLab;
+import cirmellntent.model.Photo;
+import cirmellntent.util.PictureUtils;
 
 /**
- * Created by Administrator on 2015/7/1.
+ * 详情页面 on 2015/7/1.
  */
 public class CrimeFragment extends Fragment{
     public static final String EXTRA_CRIME_ID = "CRIME_ID";
+    private static final int REQUEST_PHOTO = 1;
+
     private View layoutView;
     private Crime crime;
+    private ImageView mPhotoView;
 
     public static CrimeFragment newInstance(UUID crimeId){
         CrimeFragment crimeFragment = new CrimeFragment();
@@ -102,8 +117,45 @@ public class CrimeFragment extends Fragment{
         });
         solvedStateCheckBox.setChecked(crime.isSolved());
 
+        mPhotoView = (ImageView)layoutView.findViewById(R.id.crime_camera_imageView);
+        ImageButton cameraBtn = (ImageButton)layoutView.findViewById(R.id.crime_camera_btn);
+        if(!checkCameraAvailable()){
+            cameraBtn.setEnabled(false);
+        }
+        cameraBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CrimeCameraActivity.class);
+                startActivityForResult(intent,REQUEST_PHOTO);
+//                CommentUtil.startActivityTranslate(getActivity(),CrimeCameraActivity.class);
+            }
+        });
     }
 
+    //onCreate onStart onResume
+    @Override
+    public void onStart() {
+        super.onStart();
+        showPhoto();
+    }
+
+    //onPause onStop onDestroyView onDestroy
+    @Override
+    public void onStop() {
+        super.onStop();
+        PictureUtils.clearImageView(mPhotoView);
+    }
+
+    private void showPhoto(){
+        Photo photo = crime.getPhoto();
+        BitmapDrawable bitmapDrawable = null;
+        if(photo != null){
+            String path = getActivity().getFileStreamPath(photo.getFileName()).getAbsolutePath();
+            bitmapDrawable = PictureUtils.getScaledDrawable(getActivity(),path);
+        }
+
+        mPhotoView.setBackground(bitmapDrawable);
+    }
 
     private void showTimePickerDialog(){
         Dialog.Builder builder = new TimePickerDialog.Builder(R.style.Material_App_Dialog_TimePicker, 24, 00){
@@ -148,9 +200,7 @@ public class CrimeFragment extends Fragment{
             }
         };
 
-
-        builder.positiveAction("OK")
-                .negativeAction("CANCEL");
+        builder.positiveAction("OK").negativeAction("CANCEL");
         DialogFragment fragment = DialogFragment.newInstance(builder);
         // 需要4.0以上才支持 getFragmentManager()
         // getActivity().getSupportFragmentManager() 兼容低版本
@@ -165,5 +215,34 @@ public class CrimeFragment extends Fragment{
         Log.d("AAAA", "CrimeFragment 调用 onPause");
         super.onPause();
         CrimeLab.getCrimeLab(getActivity()).saveCrimes();
+    }
+
+    public boolean checkCameraAvailable(){
+        PackageManager packageManager = getActivity().getPackageManager();
+        boolean hasCamera;
+        hasCamera = packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA) ||
+                packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA_FRONT) ||
+                Build.VERSION.SDK_INT < Build.VERSION_CODES.GINGERBREAD ||
+                Camera.getNumberOfCameras()>0;
+        return hasCamera;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.d("AAAA", "onActivityResult requestCode="+requestCode+" ,resultCode="+resultCode);
+        if(resultCode!= Activity.RESULT_OK) return;
+
+        if(requestCode == REQUEST_PHOTO && data!=null){
+            String fileName = data.getStringExtra(CrimeCameraFragment.EXTAR_PHOTO_FILENAME);
+
+            Log.d("AAAA", "onActivityResult requestCode=REQUEST_PHOTO ,data!=null  fileName="+fileName);
+            if(fileName!= null){
+                Photo photo = new Photo(fileName);
+                crime.setPhoto(photo);
+
+                //确保用户返回后能显示缩略图
+                showPhoto();
+            }
+        }
     }
 }

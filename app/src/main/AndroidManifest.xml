@@ -6,6 +6,10 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <!-- 在应用市场上只有存在相机的设备才看看到这个应用-->
+    <uses-feature android:name="android.hardware.camera"/>
 
     <application
         android:allowBackup="true"
@@ -99,6 +103,10 @@
         <activity android:name="cirmellntent.activity.CrimeListActivity"/>
 
         <activity android:name="cirmellntent.activity.CrimePagerActivity"/>
+
+        <activity
+            android:name="cirmellntent.activity.CrimeCameraActivity"
+            />
     </application>
 
 </manifest>

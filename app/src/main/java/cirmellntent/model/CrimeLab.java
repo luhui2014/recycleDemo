@@ -66,6 +66,10 @@ public class CrimeLab {
         mCrimes.add(crime);
     }
 
+    public void deleteCrime(Crime crime){
+        mCrimes.remove(crime);
+    }
+
     /**
      * 将文件保存到本地的方法
      * @return true 保存成功，false 保存失败
