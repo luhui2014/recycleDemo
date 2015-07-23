@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:paddingLeft="10dp"
               android:paddingRight="10dp"
@@ -93,6 +94,33 @@
         android:textSize="14sp"
         android:checked="true"
         android:gravity="center_vertical"/>
+
+    <Button
+        android:id="@+id/crime_suspect_btn"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="crime_suspect_text"
+        android:textSize="16sp"/>
+
+    <com.rey.material.widget.Button
+        style="@style/FlatColorButtonRippleStyle"
+        android:layout_marginTop="15dp"
+        android:id="@+id/crime_report_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textColor="#FF2196F3"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+        android:text="crime_report_text"
+        app:rd_delayClick="afterRelease"/>
+
+
+
+
 
 
 </LinearLayout>

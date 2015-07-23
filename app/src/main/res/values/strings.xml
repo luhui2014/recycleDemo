@@ -19,4 +19,12 @@ Quam libero nulla netus eu porta curae, ut nulla bibendum facilisis et urna sed,
 
     <string name="add_crime">add_crime</string>
     <string name="show_title">show_title</string>
+    
+    
+    <!--占位符 %$s-->
+    <string name="crime_report">%1$s! The crime was discovered on %2$s.%3$s,and4$s</string>
+    <string name="crime_report_suspect">The suspect is 1$s.</string>
+    
+    
+    
 </resources>

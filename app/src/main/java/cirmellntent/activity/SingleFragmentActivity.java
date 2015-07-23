@@ -13,11 +13,17 @@ import com.cnpaypal.home.R;
 public abstract class SingleFragmentActivity extends FragmentActivity{
     protected abstract Fragment createFragment();
 
+    //只能自己用和子类用
+    protected int getLayoutResId(){
+        return R.layout.activity_fragment_crime;
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_fragment_crime);
+        //由子类直接提供布局，更加的灵活方便
+        setContentView(getLayoutResId());
 
         initView();
     }

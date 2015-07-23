@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.os.Environment;
 import android.util.Log;
 
@@ -79,5 +80,15 @@ public class CommentUtil {
     public static int px2dp(Context context,float pxValue){
         final float scale = context.getResources().getDisplayMetrics().densityDpi;
         return (int)((pxValue*160)/scale+0.5f);
+    }
+
+    /** 判断是否是平板
+     * @param context
+     * @return
+     */
+    public static boolean isTablet(Context context) {
+        return (context.getResources().getConfiguration().screenLayout
+                & Configuration.SCREENLAYOUT_SIZE_MASK)
+                >= Configuration.SCREENLAYOUT_SIZE_LARGE;
     }
 }

@@ -1,7 +1,7 @@
 package cirmellntent.fragment;
 
 import android.annotation.TargetApi;
-import android.content.Intent;
+import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
@@ -19,13 +19,11 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.cnpaypal.home.R;
 
 import java.util.ArrayList;
 
-import cirmellntent.activity.CrimePagerActivity;
 import cirmellntent.model.Crime;
 import cirmellntent.model.CrimeLab;
 
@@ -34,12 +32,25 @@ import cirmellntent.model.CrimeLab;
  */
 public class CrimeListFragment extends ListFragment{
     private ArrayList<Crime> mCrimes;
-    View layoutView;
+    private View layoutView;
+    private CallBacks mCallBacks;
+
+    public interface CallBacks{
+        void onCrimesSelected(Crime crime);
+
+    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mCallBacks = (CallBacks)activity;
     }
 
     @Override
@@ -85,6 +96,7 @@ public class CrimeListFragment extends ListFragment{
                             }
                             mode.finish();
                             crimeAdapter.notifyDataSetChanged();
+                            CrimeLab.getCrimeLab(getActivity()).saveCrimes();
                             return true;
                     }
 
@@ -105,7 +117,7 @@ public class CrimeListFragment extends ListFragment{
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity()," 点击了 增加的按钮 ",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity()," 点击了 增加的按钮 ",Toast.LENGTH_SHORT).show();
                 intentToDetail();
             }
         });
@@ -119,10 +131,11 @@ public class CrimeListFragment extends ListFragment{
     @Override
     public void onListItemClick(ListView listView, View view, int position, long id) {
         Crime crime = ((CrimeAdapter)getListAdapter()).getItem(position);
-        Intent intent = new Intent(getActivity(),CrimePagerActivity.class);
-        intent.putExtra(CrimeFragment.EXTRA_CRIME_ID,crime.getId());
-        startActivity(intent);
-        getActivity().overridePendingTransition(R.anim.activity_left_in, R.anim.activity_alpha_out);
+//        Intent intent = new Intent(getActivity(),CrimePagerActivity.class);
+//        intent.putExtra(CrimeFragment.EXTRA_CRIME_ID,crime.getId());
+//        startActivity(intent);
+//        getActivity().overridePendingTransition(R.anim.activity_left_in, R.anim.activity_alpha_out);
+        mCallBacks.onCrimesSelected(crime);
 
     }
 
@@ -201,11 +214,19 @@ public class CrimeListFragment extends ListFragment{
     }
 
     private void intentToDetail() {
+//        Crime crime = new Crime();
+//        CrimeLab.getCrimeLab(getActivity()).addCrime(crime);
+//        Intent intent = new Intent(getActivity(),CrimePagerActivity.class);
+//        intent.putExtra(CrimeFragment.EXTRA_CRIME_ID,crime.getId());
+//        startActivityForResult(intent,0);//需要onActivityResult 回调接受A
+
         Crime crime = new Crime();
         CrimeLab.getCrimeLab(getActivity()).addCrime(crime);
-        Intent intent = new Intent(getActivity(),CrimePagerActivity.class);
-        intent.putExtra(CrimeFragment.EXTRA_CRIME_ID,crime.getId());
-        startActivityForResult(intent,0);//需要onActivityResult 回调接受A
+        mCallBacks.onCrimesSelected(crime);
+
+        //加上这句，是为了平板服务的，但是这样手机的体验却不好，先是出现数据，再跳转界面
+        ((CrimeAdapter)getListAdapter()).notifyDataSetChanged();
+
     }
 
     @Override
@@ -229,5 +250,11 @@ public class CrimeListFragment extends ListFragment{
         }
 
         return super.onContextItemSelected(item);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mCallBacks = null;
     }
 }
