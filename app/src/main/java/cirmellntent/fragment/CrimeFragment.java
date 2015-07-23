@@ -109,7 +109,9 @@ public class CrimeFragment extends Fragment{
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 //                builder.title(s.toString()).build();
+
                 crime.setTitle(s.toString());
+                mCallBack.onCrimeUpdate(crime);
             }
 
             @Override
@@ -133,6 +135,7 @@ public class CrimeFragment extends Fragment{
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 crime.setSolved(isChecked);
+                mCallBack.onCrimeUpdate(crime);
             }
         });
         solvedStateCheckBox.setChecked(crime.isSolved());
@@ -308,7 +311,6 @@ public class CrimeFragment extends Fragment{
      */
     @Override
     public void onPause() {
-        Log.d("AAAA", "CrimeFragment 调用 onPause");
         super.onPause();
         CrimeLab.getCrimeLab(getActivity()).saveCrimes();
     }
@@ -338,7 +340,7 @@ public class CrimeFragment extends Fragment{
 
                 Photo photo = new Photo(fileName);
                 crime.setPhoto(photo);
-
+                mCallBack.onCrimeUpdate(crime);
                 //确保用户返回后能显示缩略图
                 showPhoto();
             }
@@ -357,6 +359,7 @@ public class CrimeFragment extends Fragment{
             cursor.moveToFirst();
             String suspect = cursor.getString(0);
             crime.setSuspect(suspect);
+            mCallBack.onCrimeUpdate(crime);
             suspectBtn.setText(suspect);
             cursor.close();
         }

@@ -52,6 +52,9 @@ public class CrimeListActivity extends SingleFragmentActivity implements CrimeLi
 
     @Override
     public void onCrimeUpdate(Crime crime) {
-
+        FragmentManager fm = getSupportFragmentManager();
+        CrimeListFragment listFragment = (CrimeListFragment)fm.findFragmentById(R.id.fragmentContainer);
+        listFragment.updateUI();
     }
+
 }

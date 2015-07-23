@@ -257,4 +257,8 @@ public class CrimeListFragment extends ListFragment{
         super.onDetach();
         mCallBacks = null;
     }
+
+    public void updateUI(){
+        ((CrimeAdapter)getListAdapter()).notifyDataSetChanged();
+    }
 }
