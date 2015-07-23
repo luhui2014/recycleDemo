@@ -1,3 +1,7 @@
+###2015-7-23
+ 完成了一个企业陋习的app的部分功能，可以手机和平板使用，支持拍照，横竖屏，自定义surferview 等
+ 采用了材料设计的库，比如checkbox的按钮效果，日期界面
+
 # recycleDemo
  fragment，listView 优化下载，通用适配器，recycleView的demo,叶子加载动画等等
 
